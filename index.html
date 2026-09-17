@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premier Container Group | Custom Shipping Container Homes &amp; Commercial Builds</title>
+<meta name="description" content="Premier Container Group designs and builds custom shipping container homes, offices and commercial structures. Turnkey design, engineering and construction.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#15181c;
+    --ink-2:#2a2e34;
+    --stone:#f4f2ed;
+    --stone-2:#e9e5dd;
+    --line:rgba(21,24,28,.12);
+    --accent:#a9603f;
+    --accent-2:#8b4d31;
+  }
+  html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--stone);overflow-x:hidden;}
+  .serif{font-family:'Cormorant Garamond',Georgia,serif;}
+  .eyebrow{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500;}
+  .container-x{width:100%;max-width:1440px;margin:0 auto;padding-left:clamp(1.25rem,5vw,4.5rem);padding-right:clamp(1.25rem,5vw,4.5rem);}
+
+  /* Header */
+  #header{transition:background-color .45s ease,box-shadow .45s ease,padding .45s ease,color .45s ease;}
+  #header.solid{background:rgba(244,242,237,.94);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line);color:var(--ink);}
+  #header.solid .nav-link{color:var(--ink);}
+  #header.solid .nav-link::after{background:var(--ink);}
+  #header.solid .logo-mark{color:var(--ink);}
+  #header.solid .logo-mark .rule{background:var(--accent);}
+  #header.solid .btn-outline-h{border-color:var(--ink);color:var(--ink);}
+  #header.solid .btn-outline-h:hover{background:var(--ink);color:#fff;}
+  #header.solid .burger span{background:var(--ink);}
+  .nav-link{position:relative;color:#fff;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500;padding:.25rem 0;transition:opacity .3s;}
+  .nav-link::after{content:'';position:absolute;left:0;bottom:-2px;height:1px;width:0;background:#fff;transition:width .35s cubic-bezier(.2,.7,.2,1);}
+  .nav-link:hover::after{width:100%;}
+  .btn-outline-h{border:1px solid rgba(255,255,255,.8);color:#fff;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;padding:.8rem 1.5rem;transition:all .35s;}
+  .btn-outline-h:hover{background:#fff;color:var(--ink);}
+  .burger span{display:block;width:26px;height:1.5px;background:#fff;transition:all .35s;}
+  .burger span+span{margin-top:7px;}
+  .burger.open span:nth-child(1){transform:translateY(8.5px) rotate(45deg);}
+  .burger.open span:nth-child(2){opacity:0;}
+  .burger.open span:nth-child(3){transform:translateY(-8.5px) rotate(-45deg);}
+
+  /* Logo */
+  .logo-mark{display:flex;align-items:center;gap:.9rem;color:#fff;line-height:1;}
+  .logo-mark .rule{width:2px;height:38px;background:var(--accent);}
+  .logo-mark .top{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.45rem;letter-spacing:.06em;}
+  .logo-mark .sub{font-size:.58rem;letter-spacing:.34em;text-transform:uppercase;margin-top:.35rem;opacity:.85;}
+
+  /* Mobile menu */
+  #mobileMenu{transform:translateX(100%);transition:transform .55s cubic-bezier(.77,0,.18,1);}
+  #mobileMenu.open{transform:translateX(0);}
+  #mobileMenu a.m-link{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:500;color:#fff;opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s;}
+  #mobileMenu.open a.m-link{opacity:1;transform:none;}
+
+  /* Buttons */
+  .btn{display:inline-flex;align-items:center;gap:.9rem;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;padding:1.05rem 2rem;transition:all .35s cubic-bezier(.2,.7,.2,1);}
+  .btn svg{transition:transform .35s;}
+  .btn:hover svg{transform:translateX(5px);}
+  .btn-light{background:#fff;color:var(--ink);}
+  .btn-light:hover{background:var(--stone-2);}
+  .btn-ghost{border:1px solid rgba(255,255,255,.7);color:#fff;}
+  .btn-ghost:hover{background:#fff;color:var(--ink);}
+  .btn-dark{background:var(--ink);color:#fff;}
+  .btn-dark:hover{background:var(--accent);}
+  .btn-line{border:1px solid var(--ink);color:var(--ink);}
+  .btn-line:hover{background:var(--ink);color:#fff;}
+
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1);}
+  .reveal.in{opacity:1;transform:none;}
+  .reveal-img{position:relative;overflow:hidden;}
+  .reveal-img::after{content:'';position:absolute;inset:0;background:var(--stone);transform:scaleY(1);transform-origin:top;transition:transform 1.1s cubic-bezier(.77,0,.18,1);z-index:2;}
+  .reveal-img.in::after{transform:scaleY(0);}
+  .reveal-img img{transform:scale(1.08);transition:transform 1.4s cubic-bezier(.2,.7,.2,1);}
+  .reveal-img.in img{transform:scale(1);}
+  .dark-bg .reveal-img::after{background:var(--ink);}
+  [data-delay="1"]{transition-delay:.12s}[data-delay="2"]{transition-delay:.24s}[data-delay="3"]{transition-delay:.36s}[data-delay="4"]{transition-delay:.48s}
+
+  /* Hero */
+  .hero-img{transform:scale(1.06);animation:heroIn 2.4s cubic-bezier(.2,.7,.2,1) forwards;}
+  @keyframes heroIn{to{transform:scale(1);}}
+  .hero-text>*{opacity:0;transform:translateY(24px);animation:up 1s cubic-bezier(.2,.7,.2,1) forwards;}
+  .hero-text>*:nth-child(1){animation-delay:.5s}.hero-text>*:nth-child(2){animation-delay:.7s}.hero-text>*:nth-child(3){animation-delay:.9s}.hero-text>*:nth-child(4){animation-delay:1.1s}
+  @keyframes up{to{opacity:1;transform:none;}}
+  .scroll-line{width:1px;height:64px;background:linear-gradient(to bottom,rgba(255,255,255,.9),transparent);position:relative;overflow:hidden;}
+  .scroll-line::after{content:'';position:absolute;top:-64px;left:0;width:1px;height:64px;background:#fff;animation:drop 2.2s ease-in-out infinite;}
+  @keyframes drop{to{top:64px;}}
+
+  /* Project cards */
+  .proj{position:relative;overflow:hidden;display:block;background:#1a1d21;}
+  .proj img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1),opacity .6s;}
+  .proj:hover img{transform:scale(1.05);}
+  .proj .shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.6) 0%,rgba(0,0,0,.05) 50%,transparent 100%);opacity:.85;transition:opacity .5s;}
+  .proj:hover .shade{opacity:1;}
+  .proj .meta{position:absolute;left:0;right:0;bottom:0;padding:1.5rem 1.75rem;color:#fff;transform:translateY(6px);transition:transform .5s;}
+  .proj:hover .meta{transform:translateY(0);}
+  .proj .arrow{position:absolute;top:1.5rem;right:1.5rem;width:44px;height:44px;border:1px solid rgba(255,255,255,.5);display:flex;align-items:center;justify-content:center;color:#fff;opacity:0;transform:translateY(-8px);transition:all .5s;}
+  .proj:hover .arrow{opacity:1;transform:none;}
+
+  /* Gallery */
+  .g-item{overflow:hidden;position:relative;}
+  .g-item img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1);}
+  .g-item:hover img{transform:scale(1.04);}
+
+  /* Timeline */
+  .step{position:relative;}
+  .step-num{font-family:'Cormorant Garamond',serif;font-size:3.5rem;line-height:1;color:var(--accent);font-weight:500;}
+  .step-line{position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--line);}
+  .step-line span{display:block;width:100%;height:0;background:var(--ink);transition:height 1.2s cubic-bezier(.2,.7,.2,1);}
+  .step.in .step-line span{height:100%;}
+
+  /* FAQ */
+  .faq-item{border-top:1px solid var(--line);}
+  .faq-item:last-child{border-bottom:1px solid var(--line);}
+  .faq-q{width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;gap:2rem;padding:1.75rem 0;cursor:pointer;}
+  .faq-q .plus{width:36px;height:36px;flex:none;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;transition:all .4s;}
+  .faq-q .plus svg{transition:transform .4s;}
+  .faq-item.open .faq-q .plus{background:var(--ink);color:#fff;border-color:var(--ink);}
+  .faq-item.open .faq-q .plus svg{transform:rotate(45deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .55s cubic-bezier(.2,.7,.2,1);}
+  .faq-a p{padding-bottom:1.75rem;}
+
+  /* Testimonials */
+  .t-slide{position:absolute;inset:0;opacity:0;transform:translateY(12px);transition:opacity .9s,transform .9s;pointer-events:none;}
+  .t-slide.active{opacity:1;transform:none;pointer-events:auto;position:relative;}
+  .t-dot{width:32px;height:1px;background:rgba(255,255,255,.35);transition:all .4s;}
+  .t-dot.active{background:#fff;width:56px;}
+
+  /* Design section */
+  .design-grid-bg{background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:48px 48px;}
+  .phase{border-left:1px solid var(--line);padding-left:1.5rem;transition:border-color .4s;}
+  .phase:hover{border-color:var(--accent);}
+
+  /* Footer */
+  .f-link{color:rgba(255,255,255,.62);font-size:.9rem;transition:color .3s;}
+  .f-link:hover{color:#fff;}
+  .vline{width:1px;background:var(--line);}
+  ::selection{background:var(--accent);color:#fff;}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header id="header" class="fixed top-0 left-0 right-0 z-50">
+  <div class="container-x flex items-center justify-between py-6 lg:py-7">
+    <a href="#home" class="logo-mark" aria-label="Premier Container Group">
+      <img id="logoImg" src="https://premiercontainergroup.com/wp-content/uploads/premier-container-group-logo.png" alt="Premier Container Group" class="h-11 w-auto hidden" onload="this.classList.remove('hidden');document.getElementById('logoText').classList.add('hidden')" onerror="this.remove()">
+      <span id="logoText" class="flex items-center gap-3">
+        <span class="rule"></span>
+        <span class="flex flex-col">
+          <span class="top">PREMIER</span>
+          <span class="sub">Container Group</span>
+        </span>
+      </span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-10">
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#design" class="nav-link">Custom Design</a>
+      <a href="#process" class="nav-link">Our Process</a>
+      <a href="#gallery" class="nav-link">Gallery</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+    </nav>
+
+    <div class="flex items-center gap-6">
+      <a href="#contact" class="btn-outline-h hidden md:inline-flex">Get a Quote</a>
+      <button id="burger" class="burger lg:hidden p-1" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="fixed inset-0 z-40 lg:hidden" style="background:var(--ink);">
+  <div class="h-full flex flex-col justify-between px-8 pt-32 pb-12">
+    <nav class="flex flex-col gap-5">
+      <a href="#home" class="m-link" style="transition-delay:.15s">Home</a>
+      <a href="#about" class="m-link" style="transition-delay:.2s">About</a>
+      <a href="#projects" class="m-link" style="transition-delay:.25s">Projects</a>
+      <a href="#design" class="m-link" style="transition-delay:.3s">Custom Design</a>
+      <a href="#process" class="m-link" style="transition-delay:.35s">Our Process</a>
+      <a href="#gallery" class="m-link" style="transition-delay:.4s">Gallery</a>
+      <a href="#faq" class="m-link" style="transition-delay:.45s">FAQ</a>
+      <a href="#contact" class="m-link" style="transition-delay:.5s">Contact</a>
+    </nav>
+    <div class="text-white/60 text-sm space-y-2">
+      <a href="#contact" class="btn btn-light w-full justify-center mb-6">Get a Quote</a>
+      <p>info@premiercontainergroup.com</p>
+      <p>Mon – Fri · 8:00am – 5:00pm</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<section id="home" class="relative min-h-[100svh] flex items-end overflow-hidden" style="background:var(--ink);">
+  <div class="absolute inset-0 overflow-hidden">
+    <img class="hero-img absolute inset-0 w-full h-full object-cover" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2400&q=80" alt="Modern container home with large glass windows at dusk">
+    <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(10,12,15,.78) 0%,rgba(10,12,15,.35) 45%,rgba(10,12,15,.15) 100%);"></div>
+  </div>
+
+  <div class="container-x relative z-10 w-full pb-16 lg:pb-24 pt-40">
+    <div class="grid lg:grid-cols-12 gap-10 items-end">
+      <div class="hero-text lg:col-span-8 text-white">
+        <p class="eyebrow text-white/75 mb-6 flex items-center gap-4"><span class="w-10 h-px bg-white/60"></span>Custom Shipping Container Homes &amp; Commercial Builds</p>
+        <h1 class="serif font-medium leading-[1.02] text-[2.9rem] sm:text-6xl lg:text-7xl xl:text-[5.6rem] max-w-4xl">Modern Living, <em class="italic font-normal">Built</em> from Steel.</h1>
+        <p class="mt-7 max-w-xl text-base lg:text-lg text-white/80 leading-relaxed font-light">Premier Container Group designs and builds custom shipping container homes, offices, and commercial spaces. From concept and engineering to turnkey delivery, we bring your vision to life with strength, precision and style.</p>
+        <div class="mt-10 flex flex-wrap gap-4">
+          <a href="#contact" class="btn btn-light">Get a Quote
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#projects" class="btn btn-ghost">View Our Projects</a>
+        </div>
+      </div>
+      <div class="hidden lg:flex lg:col-span-4 justify-end items-end gap-10 text-white/70">
+        <div class="flex flex-col items-center gap-4">
+          <span class="eyebrow" style="writing-mode:vertical-rl;transform:rotate(180deg);">Scroll</span>
+          <div class="scroll-line"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURES / VALUE ============ -->
+<section class="relative" style="background:var(--stone);">
+  <div class="container-x">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 border-b" style="border-color:var(--line);">
+      <div class="reveal py-12 lg:py-16 lg:pr-10 md:border-r" style="border-color:var(--line);">
+        <svg class="w-9 h-9 mb-7" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 18 20 6l16 12v16H4z"/><path d="M15 34V22h10v12"/></svg>
+        <h3 class="serif text-2xl font-medium mb-3">Custom Container Homes</h3>
+        <p class="text-sm leading-relaxed text-neutral-600">Fully customized residential container homes designed around how you live — from single-unit studios to multi-container family residences.</p>
+      </div>
+      <div class="reveal py-12 lg:py-16 lg:px-10 lg:border-r" data-delay="1" style="border-color:var(--line);">
+        <svg class="w-9 h-9 mb-7" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="4" y="12" width="32" height="18"/><path d="M4 18h32M4 24h32M12 12v18M20 12v18M28 12v18"/></svg>
+        <h3 class="serif text-2xl font-medium mb-3">Commercial &amp; Office Builds</h3>
+        <p class="text-sm leading-relaxed text-neutral-600">Offices, retail, hospitality and multi-use container structures engineered for durability, mobility and fast deployment.</p>
+      </div>
+      <div class="reveal py-12 lg:py-16 lg:px-10 md:border-r" data-delay="2" style="border-color:var(--line);">
+        <svg class="w-9 h-9 mb-7" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M6 8h28v24H6z"/><path d="M6 16h28M14 16v16M14 24h20"/><circle cx="10" cy="12" r="1"/></svg>
+        <h3 class="serif text-2xl font-medium mb-3">Design &amp; Engineering</h3>
+        <p class="text-sm leading-relaxed text-neutral-600">In-house CAD design, floor plans, 3D renderings and structural engineering so every project is buildable, permit-ready and beautiful.</p>
+      </div>
+      <div class="reveal py-12 lg:py-16 lg:pl-10" data-delay="3">
+        <svg class="w-9 h-9 mb-7" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M6 26V12h20v14"/><path d="M26 16h6l4 6v4H26z"/><circle cx="11" cy="28" r="3"/><circle cx="30" cy="28" r="3"/></svg>
+        <h3 class="serif text-2xl font-medium mb-3">Turnkey Delivery</h3>
+        <p class="text-sm leading-relaxed text-neutral-600">We manage fabrication, finishes, transport and on-site installation so your project arrives complete and ready to use.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projects" class="py-24 lg:py-36" style="background:var(--stone);">
+  <div class="container-x">
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-14 lg:mb-20">
+      <div class="reveal">
+        <p class="eyebrow text-neutral-500 mb-5 flex items-center gap-4"><span class="text-neutral-900">01</span><span class="w-10 h-px" style="background:var(--accent)"></span>Our Projects</p>
+        <h2 class="serif font-medium leading-[1.05] text-4xl sm:text-5xl lg:text-6xl max-w-2xl">Featured Builds</h2>
+      </div>
+      <p class="reveal max-w-md text-neutral-600 leading-relaxed" data-delay="1">Explore a selection of our completed container homes and commercial projects. Every build is engineered and finished to the highest standard.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-4 lg:gap-6 auto-rows-[260px] md:auto-rows-[300px] lg:auto-rows-[340px]">
+      <!-- Large -->
+      <a href="#contact" class="proj reveal-img md:col-span-7 md:row-span-2">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=80" alt="The Hillside Residence">
+        <div class="shade"></div>
+        <div class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17 17 7M8 7h9v9"/></svg></div>
+        <div class="meta">
+          <p class="eyebrow text-white/70 mb-2">Residential · 3 × 40' Containers</p>
+          <h3 class="serif text-3xl lg:text-4xl font-medium">The Hillside Residence</h3>
+        </div>
+      </a>
+      <a href="#contact" class="proj reveal-img md:col-span-5">
+        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1400&q=80" alt="Lakeview Container Home">
+        <div class="shade"></div>
+        <div class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17 17 7M8 7h9v9"/></svg></div>
+        <div class="meta">
+          <p class="eyebrow text-white/70 mb-2">Residential · 2 × 40' Containers</p>
+          <h3 class="serif text-2xl lg:text-3xl font-medium">Lakeview Container Home</h3>
+        </div>
+      </a>
+      <a href="#contact" class="proj reveal-img md:col-span-5">
+        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=80" alt="Studio Office Suite interior">
+        <div class="shade"></div>
+        <div class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17 17 7M8 7h9v9"/></svg></div>
+        <div class="meta">
+          <p class="eyebrow text-white/70 mb-2">Commercial · 20' Office Suite</p>
+          <h3 class="serif text-2xl lg:text-3xl font-medium">Studio Office Suite</h3>
+        </div>
+      </a>
+      <a href="#contact" class="proj reveal-img md:col-span-4">
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80" alt="The Ranch Guest House">
+        <div class="shade"></div>
+        <div class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17 17 7M8 7h9v9"/></svg></div>
+        <div class="meta">
+          <p class="eyebrow text-white/70 mb-2">Guest House · 40' High Cube</p>
+          <h3 class="serif text-2xl lg:text-3xl font-medium">The Ranch Guest House</h3>
+        </div>
+      </a>
+      <a href="#contact" class="proj reveal-img md:col-span-8">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1800&q=80" alt="Modern Retreat with pool">
+        <div class="shade"></div>
+        <div class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17 17 7M8 7h9v9"/></svg></div>
+        <div class="meta">
+          <p class="eyebrow text-white/70 mb-2">Residential · 4 × 40' Containers</p>
+          <h3 class="serif text-2xl lg:text-3xl font-medium">The Modern Retreat</h3>
+        </div>
+      </a>
+    </div>
+
+    <div class="reveal mt-14 flex justify-center">
+      <a href="#gallery" class="btn btn-line">View Full Gallery
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="relative bg-white">
+  <div class="grid lg:grid-cols-2">
+    <div class="reveal-img relative min-h-[420px] lg:min-h-[820px]">
+      <img class="absolute inset-0 w-full h-full object-cover" src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=1600&q=80" alt="Premier Container Group modern container home exterior">
+    </div>
+    <div class="relative flex items-center">
+      <div class="hidden lg:block absolute left-0 top-16 bottom-16 vline"></div>
+      <div class="px-6 py-20 sm:px-12 lg:pl-20 lg:pr-24 xl:pl-28 xl:pr-32 lg:py-28 max-w-2xl">
+        <p class="reveal eyebrow text-neutral-500 mb-6 flex items-center gap-4"><span class="text-neutral-900">02</span><span class="w-10 h-px" style="background:var(--accent)"></span>About Us</p>
+        <h2 class="reveal serif font-medium leading-[1.05] text-4xl sm:text-5xl lg:text-6xl mb-8" data-delay="1">About Premier Container Group</h2>
+        <div class="reveal space-y-5 text-neutral-600 leading-relaxed" data-delay="2">
+          <p>Premier Container Group is a full-service shipping container construction company specializing in custom container homes, offices, and commercial buildings. We combine architectural design, structural engineering and skilled fabrication to deliver durable, sustainable and beautifully finished spaces.</p>
+          <p>Our team handles every stage of your project — design, permitting support, fabrication, finishes, delivery and installation. Whether you are planning a compact backyard studio or a multi-container residence, we build with the same commitment to quality, precision and craftsmanship.</p>
+        </div>
+        <div class="reveal grid grid-cols-3 gap-6 mt-12 pt-10 border-t" data-delay="3" style="border-color:var(--line);">
+          <div><p class="serif text-4xl lg:text-5xl font-medium">100%</p><p class="eyebrow text-neutral-500 mt-2">Custom Built</p></div>
+          <div><p class="serif text-4xl lg:text-5xl font-medium">Turnkey</p><p class="eyebrow text-neutral-500 mt-2">Delivery</p></div>
+          <div><p class="serif text-4xl lg:text-5xl font-medium">In-House</p><p class="eyebrow text-neutral-500 mt-2">Design &amp; Build</p></div>
+        </div>
+        <a href="#contact" class="reveal btn btn-dark mt-12" data-delay="4">Start Your Project
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DESIGN / CUSTOM BUILD ============ -->
+<section id="design" class="design-grid-bg py-24 lg:py-36 relative" style="background-color:var(--stone);">
+  <div class="container-x">
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+      <div class="lg:col-span-5">
+        <p class="reveal eyebrow text-neutral-500 mb-6 flex items-center gap-4"><span class="text-neutral-900">03</span><span class="w-10 h-px" style="background:var(--accent)"></span>Custom Design</p>
+        <h2 class="reveal serif font-medium leading-[1.05] text-4xl sm:text-5xl lg:text-6xl mb-8" data-delay="1">Custom Design &amp; Planning</h2>
+        <div class="reveal space-y-5 text-neutral-600 leading-relaxed" data-delay="2">
+          <p>Every Premier Container Group project begins with design. Our in-house team develops detailed CAD drawings, floor plans and 3D renderings so you can see your container home before a single cut is made.</p>
+          <p>We work closely with you to plan layouts, window and door placement, insulation, electrical, plumbing and finishes — engineering each structure to meet local building codes and your unique vision.</p>
+        </div>
+
+        <div class="reveal mt-12 grid sm:grid-cols-2 gap-8" data-delay="3">
+          <div class="phase">
+            <p class="eyebrow text-neutral-500 mb-2">Phase 01</p>
+            <h4 class="serif text-2xl font-medium mb-2">Concept</h4>
+            <p class="text-sm text-neutral-600 leading-relaxed">Site, budget, container count and layout goals defined together.</p>
+          </div>
+          <div class="phase">
+            <p class="eyebrow text-neutral-500 mb-2">Phase 02</p>
+            <h4 class="serif text-2xl font-medium mb-2">Design</h4>
+            <p class="text-sm text-neutral-600 leading-relaxed">CAD floor plans, elevations and 3D renderings of your build.</p>
+          </div>
+          <div class="phase">
+            <p class="eyebrow text-neutral-500 mb-2">Phase 03</p>
+            <h4 class="serif text-2xl font-medium mb-2">Planning</h4>
+            <p class="text-sm text-neutral-600 leading-relaxed">Structural engineering, permitting support and material selection.</p>
+          </div>
+          <div class="phase">
+            <p class="eyebrow text-neutral-500 mb-2">Phase 04</p>
+            <h4 class="serif text-2xl font-medium mb-2">Construction</h4>
+            <p class="text-sm text-neutral-600 leading-relaxed">Precision fabrication, finishes and installation on your site.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 grid grid-cols-12 gap-4 lg:gap-6">
+        <div class="reveal-img col-span-12 h-[300px] sm:h-[380px] lg:h-[460px]">
+          <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80" alt="Architectural drawings and floor plans">
+        </div>
+        <div class="reveal-img col-span-7 h-[220px] sm:h-[280px] lg:h-[320px]">
+          <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1541976590-713941681591?auto=format&fit=crop&w=1200&q=80" alt="Shipping container structure">
+        </div>
+        <div class="reveal-img col-span-5 h-[220px] sm:h-[280px] lg:h-[320px]">
+          <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=80" alt="Finished container home interior">
+        </div>
+        <p class="reveal col-span-12 eyebrow text-neutral-500 mt-2 flex items-center gap-4"><span class="w-6 h-px bg-neutral-400"></span>From drawing to delivered structure</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW WE BUILD / PROCESS ============ -->
+<section id="process" class="py-24 lg:py-36 bg-white">
+  <div class="container-x">
+    <div class="grid lg:grid-cols-12 gap-10 mb-16 lg:mb-24">
+      <div class="lg:col-span-6">
+        <p class="reveal eyebrow text-neutral-500 mb-6 flex items-center gap-4"><span class="text-neutral-900">04</span><span class="w-10 h-px" style="background:var(--accent)"></span>Our Process</p>
+        <h2 class="reveal serif font-medium leading-[1.05] text-4xl sm:text-5xl lg:text-6xl" data-delay="1">How We Build</h2>
+      </div>
+      <div class="lg:col-span-5 lg:col-start-8 flex items-end">
+        <p class="reveal text-neutral-600 leading-relaxed" data-delay="2">A clear, step-by-step process from first conversation to final installation. We keep you informed at every stage so your project stays on schedule and on budget.</p>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-x-10 gap-y-14">
+      <div class="step reveal pl-8">
+        <div class="step-line"><span></span></div>
+        <svg class="w-7 h-7 mb-6 text-neutral-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 5h16v11H8l-4 4z"/><path d="M8 9h8M8 12h5"/></svg>
+        <p class="step-num mb-4">01</p>
+        <h4 class="serif text-2xl font-medium mb-3">Consultation</h4>
+        <p class="text-sm text-neutral-600 leading-relaxed">We discuss your goals, site, budget and timeline to determine the right container solution for your project.</p>
+      </div>
+      <div class="step reveal pl-8" data-delay="1">
+        <div class="step-line"><span></span></div>
+        <svg class="w-7 h-7 mb-6 text-neutral-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 21 14 10M14 3l7 7-4 4-7-7z"/><path d="M6 18l1.5 1.5"/></svg>
+        <p class="step-num mb-4">02</p>
+        <h4 class="serif text-2xl font-medium mb-3">Design &amp; Engineering</h4>
+        <p class="text-sm text-neutral-600 leading-relaxed">Our team creates detailed CAD drawings, floor plans, renderings and structural engineering for approval and permitting.</p>
+      </div>
+      <div class="step reveal pl-8" data-delay="2">
+        <div class="step-line"><span></span></div>
+        <svg class="w-7 h-7 mb-6 text-neutral-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M14 4l6 6-9 9H5v-6z"/><path d="M11 7l6 6"/></svg>
+        <p class="step-num mb-4">03</p>
+        <h4 class="serif text-2xl font-medium mb-3">Fabrication</h4>
+        <p class="text-sm text-neutral-600 leading-relaxed">Containers are cut, reinforced, welded, insulated and framed in our facility with precision and quality control.</p>
+      </div>
+      <div class="step reveal pl-8" data-delay="3">
+        <div class="step-line"><span></span></div>
+        <svg class="w-7 h-7 mb-6 text-neutral-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="4" width="18" height="16"/><path d="M3 10h18M9 10v10"/></svg>
+        <p class="step-num mb-4">04</p>
+        <h4 class="serif text-2xl font-medium mb-3">Interior Finishes</h4>
+        <p class="text-sm text-neutral-600 leading-relaxed">Electrical, plumbing, HVAC, cabinetry, flooring and fixtures are installed to complete your custom interior.</p>
+      </div>
+      <div class="step reveal pl-8" data-delay="4">
+        <div class="step-line"><span></span></div>
+        <svg class="w-7 h-7 mb-6 text-neutral-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 16V7h12v9"/><path d="M15 10h4l2 3v3h-6z"/><circle cx="6.5" cy="17.5" r="1.5"/><circle cx="17.5" cy="17.5" r="1.5"/></svg>
+        <p class="step-num mb-4">05</p>
+        <h4 class="serif text-2xl font-medium mb-3">Delivery &amp; Installation</h4>
+        <p class="text-sm text-neutral-600 leading-relaxed">We transport and set your completed structure on site, connect utilities and hand over the keys.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section id="gallery" class="py-24 lg:py-36" style="background:var(--stone);">
+  <div class="container-x mb-14 lg:mb-20 flex flex-col lg:flex-row lg:items-end justify-between gap-8">
+    <div>
+      <p class="reveal eyebrow text-neutral-500 mb-6 flex items-center gap-4"><span class="text-neutral-900">05</span><span class="w-10 h-px" style="background:var(--accent)"></span>Gallery</p>
+      <h2 class="reveal serif font-medium leading-[1.05] text-4xl sm:text-5xl lg:text-6xl" data-delay="1">Project Gallery</h2>
+    </div>
+    <p class="reveal max-w-md text-neutral-600 leading-relaxed" data-delay="2">A closer look at the exteriors, interiors and details of our container builds.</p>
+  </div>
+
+  <div class="px-3 sm:px-6 lg:px-10">
+    <div class="grid grid-cols-2 md:grid-cols-6 gap-3 lg:gap-5 auto-rows-[180px] sm:auto-rows-[220px] lg:auto-rows-[260px]">
+      <div class="g-item reveal-img col-span-2 md:col-span-4 row-span-2"><img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1800&q=80" alt="Container home exterior with pool"></div>
+      <div class="g-item reveal-img col-span-1 md:col-span-2 row-span-2"><img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1000&q=80" alt="Interior living space"></div>
+      <div class="g-item reveal-img col-span-1 md:col-span-2"><img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=1000&q=80" alt="Kitchen detail"></div>
+      <div class="g-item reveal-img col-span-2 md:col-span-2 row-span-2"><img src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?auto=format&fit=crop&w=1000&q=80" alt="Container home exterior evening"></div>
+      <div class="g-item reveal-img col-span-1 md:col-span-2"><img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1000&q=80" alt="Interior kitchen"></div>
+      <div class="g-item reveal-img col-span-1 md:col-span-2"><img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=1000&q=80" alt="Modern interior detail"></div>
+      <div class="g-item reveal-img col-span-2 md:col-span-2"><img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1200&q=80" alt="Modern home exterior"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="relative py-28 lg:py-44 overflow-hidden dark-bg" style="background:var(--ink);">
+  <img class="absolute inset-0 w-full h-full object-cover opacity-40" src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=2400&q=80" alt="">
+  <div class="absolute inset-0" style="background:linear-gradient(to right,rgba(21,24,28,.92) 0%,rgba(21,24,28,.7) 60%,rgba(21,24,28,.5) 100%);"></div>
+
+  <div class="container-x relative z-10 text-white">
+    <p class="reveal eyebrow text-white/60 mb-10 flex items-center gap-4"><span class="text-white">06</span><span class="w-10 h-px" style="background:var(--accent)"></span>Testimonials</p>
+    <div class="grid lg:grid-cols-12 gap-10">
+      <div class="lg:col-span-9 relative" id="tSlides">
+        <div class="t-slide active">
+          <svg class="w-10 h-10 mb-8 text-white/40" viewBox="0 0 24 24" fill="currentColor"><path d="M7 7h4v6H8c0 2 1 3 3 3v2c-3 0-5-2-5-5V7zm8 0h4v6h-3c0 2 1 3 3 3v2c-3 0-5-2-5-5V7z"/></svg>
+          <blockquote class="serif font-normal leading-[1.2] text-3xl sm:text-4xl lg:text-5xl max-w-4xl">"Premier Container Group turned our idea into a stunning home. The design process was seamless, the craftsmanship is outstanding, and they delivered exactly when they said they would."</blockquote>
+          <div class="mt-10 flex items-center gap-5">
+            <span class="w-10 h-px bg-white/50"></span>
+            <div><p class="font-medium">Sarah &amp; Michael R.</p><p class="text-sm text-white/60">Custom Container Home</p></div>
+          </div>
+        </div>
+        <div class="t-slide">
+          <svg class="w-10 h-10 mb-8 text-white/40" viewBox="0 0 24 24" fill="currentColor"><path d="M7 7h4v6H8c0 2 1 3 3 3v2c-3 0-5-2-5-5V7zm8 0h4v6h-3c0 2 1 3 3 3v2c-3 0-5-2-5-5V7z"/></svg>
+          <blockquote class="serif font-normal leading-[1.2] text-3xl sm:text-4xl lg:text-5xl max-w-4xl">"We needed a professional office space fast. The team designed, built and installed our container office in weeks — it looks incredible and our clients love it."</blockquote>
+          <div class="mt-10 flex items-center gap-5">
+            <span class="w-10 h-px bg-white/50"></span>
+            <div><p class="font-medium">David T.</p><p class="text-sm text-white/60">Commercial Office Build</p></div>
+          </div>
+        </div>
+        <div class="t-slide">
+          <svg class="w-10 h-10 mb-8 text-white/40" viewBox="0 0 24 24" fill="currentColor"><path d="M7 7h4v6H8c0 2 1 3 3 3v2c-3 0-5-2-5-5V7zm8 0h4v6h-3c0 2 1 3 3 3v2c-3 0-5-2-5-5V7z"/></svg>
+          <blockquote class="serif font-normal leading-[1.2] text-3xl sm:text-4xl lg:text-5xl max-w-4xl">"From the first consultation to the final walkthrough, communication was excellent. The quality of the finishes exceeded our expectations. Highly recommended."</blockquote>
+          <div class="mt-10 flex items-center gap-5">
+            <span class="w-10 h-px bg-white/50"></span>
+            <div><p class="font-medium">Jennifer L.</p><p class="text-sm text-white/60">Guest House Project</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-3 flex lg:flex-col lg:items-end lg:justify-end gap-6">
+        <div class="flex items-center gap-3" id="tDots">
+          <button class="t-dot active" aria-label="Testimonial 1"></button>
+          <button class="t-dot" aria-label="Testimonial 2"></button>
+          <button class="t-dot" aria-label="Testimonial 3"></button>
+        </div>
+        <div class="flex gap-3">
+          <button id="tPrev" class="w-12 h-12 border border-white/40 flex items-center justify-center hover:bg-white hover:text-neutral-900 transition" aria-label="Previous"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+          <button id="tNext" class="w-12 h-12 border border-white/40 flex items-center justify-center hover:bg-white hover:text-neutral-900 transition" aria-label="Next"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" class="py-24 lg:py-36 bg-white">
+  <div class="container-x grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-4">
+      <p class="reveal eyebrow text-neutral-500 mb-6 flex items-center gap-4"><span class="text-neutral-900">07</span><span class="w-10 h-px" style="background:var(--accent)"></span>FAQ</p>
+      <h2 class="reveal serif font-medium leading-[1.05] text-4xl sm:text-5xl lg:text-6xl mb-6" data-delay="1">Frequently Asked Questions</h2>
+      <p class="reveal text-neutral-600 leading-relaxed mb-8" data-delay="2">Have a question that isn't answered here? Reach out and our team will be happy to help.</p>
+      <a href="#contact" class="reveal btn btn-line" data-delay="3">Contact Us
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="lg:col-span-7 lg:col-start-6 reveal" data-delay="1">
+      <div class="faq-item open">
+        <button class="faq-q"><span class="serif text-xl sm:text-2xl font-medium">How much does a shipping container home cost?</span><span class="plus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg></span></button>
+        <div class="faq-a"><p class="text-neutral-600 leading-relaxed pr-12">Pricing depends on the size, number of containers, design complexity and finish level of your project. After a consultation and initial design, we provide a detailed quote tailored to your build.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span class="serif text-xl sm:text-2xl font-medium">How long does it take to build a container home?</span><span class="plus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg></span></button>
+        <div class="faq-a"><p class="text-neutral-600 leading-relaxed pr-12">Most projects are completed significantly faster than traditional construction. Timelines vary by scope, but a typical build moves from design approval to delivery in a matter of weeks to a few months.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span class="serif text-xl sm:text-2xl font-medium">Are shipping container homes safe and durable?</span><span class="plus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg></span></button>
+        <div class="faq-a"><p class="text-neutral-600 leading-relaxed pr-12">Yes. Shipping containers are built from corten steel designed to withstand extreme conditions. We reinforce every structural modification and engineer each build to meet or exceed applicable building codes.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span class="serif text-xl sm:text-2xl font-medium">Do you handle permits and site preparation?</span><span class="plus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg></span></button>
+        <div class="faq-a"><p class="text-neutral-600 leading-relaxed pr-12">We provide engineered drawings and documentation to support your permitting process and can advise on foundation and site requirements so your property is ready for delivery and installation.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span class="serif text-xl sm:text-2xl font-medium">Can I fully customize the design?</span><span class="plus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg></span></button>
+        <div class="faq-a"><p class="text-neutral-600 leading-relaxed pr-12">Absolutely. Every project is designed to your specifications — layout, windows, doors, exterior cladding, interior finishes, fixtures and more. Our design team works with you from concept to final selections.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span class="serif text-xl sm:text-2xl font-medium">Do you deliver and install the finished structure?</span><span class="plus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg></span></button>
+        <div class="faq-a"><p class="text-neutral-600 leading-relaxed pr-12">Yes. We coordinate transportation and on-site placement of your completed container build and oversee installation so the project is delivered turnkey.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section id="contact" class="relative min-h-[80vh] flex items-center overflow-hidden dark-bg" style="background:var(--ink);">
+  <img class="absolute inset-0 w-full h-full object-cover" src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=2400&q=80" alt="Premium container home at dusk">
+  <div class="absolute inset-0" style="background:linear-gradient(to right,rgba(10,12,15,.85) 0%,rgba(10,12,15,.55) 55%,rgba(10,12,15,.3) 100%);"></div>
+  <div class="container-x relative z-10 py-28 lg:py-40 text-white">
+    <div class="grid lg:grid-cols-12 gap-12 items-end">
+      <div class="lg:col-span-7">
+        <p class="reveal eyebrow text-white/70 mb-6 flex items-center gap-4"><span class="w-10 h-px" style="background:var(--accent)"></span>Ready to Get Started?</p>
+        <h2 class="reveal serif font-medium leading-[1.02] text-4xl sm:text-5xl lg:text-7xl max-w-3xl" data-delay="1">Let's Build Your Container Home</h2>
+        <p class="reveal mt-7 max-w-xl text-white/80 leading-relaxed font-light text-lg" data-delay="2">Contact Premier Container Group today for a free consultation and quote. Tell us about your project and we'll help you bring it to life.</p>
+        <div class="reveal mt-10 flex flex-wrap gap-4" data-delay="3">
+          <a href="mailto:info@premiercontainergroup.com" class="btn btn-light">Get a Free Quote
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="tel:+18005550123" class="btn btn-ghost">Call Us</a>
+        </div>
+      </div>
+      <div class="lg:col-span-4 lg:col-start-9 reveal" data-delay="2">
+        <div class="border-l border-white/30 pl-8 space-y-7">
+          <div><p class="eyebrow text-white/55 mb-2">Email</p><a href="mailto:info@premiercontainergroup.com" class="text-lg hover:underline">info@premiercontainergroup.com</a></div>
+          <div><p class="eyebrow text-white/55 mb-2">Phone</p><a href="tel:+18005550123" class="text-lg hover:underline">(800) 555-0123</a></div>
+          <div><p class="eyebrow text-white/55 mb-2">Hours</p><p class="text-lg">Monday – Friday · 8:00am – 5:00pm</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="text-white" style="background:#0f1114;">
+  <div class="container-x pt-20 pb-10">
+    <div class="grid md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 pb-16 border-b border-white/10">
+      <div class="lg:col-span-4">
+        <a href="#home" class="logo-mark" aria-label="Premier Container Group">
+          <span class="flex items-center gap-3">
+            <span class="rule"></span>
+            <span class="flex flex-col"><span class="top">PREMIER</span><span class="sub">Container Group</span></span>
+          </span>
+        </a>
+        <p class="mt-8 text-white/60 text-sm leading-relaxed max-w-sm">Premier Container Group is a full-service shipping container construction company specializing in custom container homes, offices and commercial buildings — from design and engineering to turnkey delivery.</p>
+        <div class="flex gap-4 mt-8">
+          <a href="#" aria-label="Facebook" class="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-white hover:text-neutral-900 transition"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2 0-3 1.3-3 3v2H9v3h2v7h3v-7h2.5l.5-3h-3v-1.5c0-.3.2-.5.5-.5z"/></svg></a>
+          <a href="#" aria-label="Instagram" class="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-white hover:text-neutral-900 transition"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="YouTube" class="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-white hover:text-neutral-900 transition"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="M10 9l5 3-5 3z" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="LinkedIn" class="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-white hover:text-neutral-900 transition"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6 9H3v12h3zM4.5 7.5A1.75 1.75 0 1 0 4.5 4a1.75 1.75 0 0 0 0 3.5zM21 21h-3v-6c0-1.6-.6-2.5-2-2.5s-2.2 1-2.2 2.5V21h-3V9h3v1.6c.6-1 1.8-1.9 3.5-1.9 2.6 0 3.7 1.7 3.7 4.6z"/></svg></a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-2 lg:col-start-6">
+        <p class="eyebrow text-white/45 mb-6">Navigation</p>
+        <ul class="space-y-3">
+          <li><a href="#home" class="f-link">Home</a></li>
+          <li><a href="#about" class="f-link">About</a></li>
+          <li><a href="#projects" class="f-link">Projects</a></li>
+          <li><a href="#design" class="f-link">Custom Design</a></li>
+          <li><a href="#process" class="f-link">Our Process</a></li>
+          <li><a href="#gallery" class="f-link">Gallery</a></li>
+          <li><a href="#faq" class="f-link">FAQ</a></li>
+          <li><a href="#contact" class="f-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="lg:col-span-2">
+        <p class="eyebrow text-white/45 mb-6">Projects</p>
+        <ul class="space-y-3">
+          <li><a href="#projects" class="f-link">The Hillside Residence</a></li>
+          <li><a href="#projects" class="f-link">Lakeview Container Home</a></li>
+          <li><a href="#projects" class="f-link">Studio Office Suite</a></li>
+          <li><a href="#projects" class="f-link">The Ranch Guest House</a></li>
+          <li><a href="#projects" class="f-link">The Modern Retreat</a></li>
+        </ul>
+      </div>
+
+      <div class="lg:col-span-3">
+        <p class="eyebrow text-white/45 mb-6">Contact</p>
+        <ul class="space-y-4 text-sm">
+          <li><a href="mailto:info@premiercontainergroup.com" class="f-link">info@premiercontainergroup.com</a></li>
+          <li><a href="tel:+18005550123" class="f-link">(800) 555-0123</a></li>
+          <li class="text-white/60">Monday – Friday<br>8:00am – 5:00pm</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost mt-8 text-[.7rem]">Get a Quote</a>
+      </div>
+    </div>
+
+    <div class="pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-xs text-white/45">
+      <p>&copy; <span id="year"></span> Premier Container Group. All rights reserved.</p>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-white transition">Privacy Policy</a>
+        <a href="#" class="hover:text-white transition">Terms of Service</a>
+        <a href="#" class="hover:text-white transition">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Header scroll state
+  const header = document.getElementById('header');
+  const onScroll = () => { header.classList.toggle('solid', window.scrollY > 60); };
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  // Mobile menu
+  const burger = document.getElementById('burger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const toggleMenu = (force) => {
+    const open = force !== undefined ? force : !mobileMenu.classList.contains('open');
+    mobileMenu.classList.toggle('open', open);
+    burger.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+    if (open) header.classList.remove('solid'); else onScroll();
+  };
+  burger.addEventListener('click', () => toggleMenu());
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
+
+  // Scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold: 0.12, rootMargin: '0px 0px -6% 0px'});
+  document.querySelectorAll('.reveal, .reveal-img, .step').forEach(el => io.observe(el));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q'), a = item.querySelector('.faq-a');
+    if (item.classList.contains('open')) a.style.maxHeight = a.scrollHeight + 'px';
+    q.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(o => { o.classList.remove('open'); o.querySelector('.faq-a').style.maxHeight = null; });
+      if (!isOpen) { item.classList.add('open'); a.style.maxHeight = a.scrollHeight + 'px'; }
+    });
+  });
+  window.addEventListener('resize', () => {
+    document.querySelectorAll('.faq-item.open .faq-a').forEach(a => a.style.maxHeight = a.scrollHeight + 'px');
+  });
+
+  // Testimonials
+  const slides = document.querySelectorAll('.t-slide'), dots = document.querySelectorAll('.t-dot');
+  let cur = 0, timer;
+  const show = (i) => {
+    cur = (i + slides.length) % slides.length;
+    slides.forEach((s, idx) => s.classList.toggle('active', idx === cur));
+    dots.forEach((d, idx) => d.classList.toggle('active', idx === cur));
+  };
+  const auto = () => { clearInterval(timer); timer = setInterval(() => show(cur + 1), 7000); };
+  document.getElementById('tNext').addEventListener('click', () => { show(cur + 1); auto(); });
+  document.getElementById('tPrev').addEventListener('click', () => { show(cur - 1); auto(); });
+  dots.forEach((d, i) => d.addEventListener('click', () => { show(i); auto(); }));
+  auto();
+
+  // Smooth offset scroll for anchors
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href');
+      if (id.length < 2) return;
+      const t = document.querySelector(id);
+      if (!t) return;
+      e.preventDefault();
+      const y = t.getBoundingClientRect().top + window.scrollY - (id === '#home' ? 0 : 0);
+      window.scrollTo({top: y, behavior: 'smooth'});
+    });
+  });
+</script>
+</body>
+</html>
